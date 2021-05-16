@@ -1,0 +1,2 @@
+rootProject.name = "Grip_task"
+include ':app'

@@ -1,4 +1,4 @@
-package com.example.grip_task;
+ package com.example.grip_task;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -162,6 +162,7 @@ public class LoginActivity extends AppCompatActivity {
             }
 
             Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+            finish();
             startActivity(intent);
 
         } catch (ApiException e) {
@@ -238,7 +239,7 @@ public class LoginActivity extends AppCompatActivity {
                                 String email = object.getString("email");
                                 String id = object.getString("id");
                                 String birthday = object.getString("birthday");
-                                String profileLink = Profile.getCurrentProfile().getLinkUri().toString();
+//                                String profileLink = Profile.getCurrentProfile().getLinkUri().toString();
 
 //                                String profileLink = object.getString("link");
                                 String gender = object.getString("gender");
@@ -254,7 +255,7 @@ public class LoginActivity extends AppCompatActivity {
                                 intent.putExtra("birthday", birthday);
                                 intent.putExtra("gender", gender);
 
-                                intent.putExtra("profilelink", profileLink);
+//                                intent.putExtra("profilelink", profileLink);
 
 
                                 Log.v("TAGObjectInfo","id: "+id);
@@ -262,7 +263,6 @@ public class LoginActivity extends AppCompatActivity {
                                 Log.v("TAGObjectInfo","email: "+email);
                                 Log.v("TAGObjectInfo","birthday: "+birthday);
                                 Log.v("TAGObjectInfo","gender: "+gender);
-                                Log.v("TAGObjectInfo","url: "+ profileLink);
 
 
 

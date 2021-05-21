@@ -23,10 +23,10 @@ import com.squareup.picasso.Picasso;
 public class ProfileActivity extends AppCompatActivity {
 
 
-    private String name,  userId, picURL, profileLink, userBirthday, gender, email;
+    private String name, userId, picURL, userBirthday, gender, email;
     private ImageView profilePic;
     private Button backBtn;
-    private TextView tvFullName,  tvGender, tvDOB, tvEmail, tvLink;
+    private TextView tvFullName, tvGender, tvDOB, tvEmail;
     private String api;
     private ConstraintLayout constraintLayout;
     private LinearLayout linearLayout;
@@ -44,12 +44,7 @@ public class ProfileActivity extends AppCompatActivity {
         tvGender = findViewById(R.id.gender);
         tvDOB = findViewById(R.id.dob);
         tvEmail = findViewById(R.id.email);
-        tvLink = findViewById(R.id.link);
 
-
-        constraintLayout = (ConstraintLayout) findViewById(R.id.mainLayout);
-        linearLayout = findViewById(R.id.layouttemp);
-        final TextView child = constraintLayout.findViewById(R.id.link);
 
         Intent intent = getIntent();
         name = intent.getStringExtra("name");
@@ -59,18 +54,7 @@ public class ProfileActivity extends AppCompatActivity {
         api = intent.getStringExtra("social");
 
         userBirthday = intent.getStringExtra("birthday");
-        profileLink = intent.getStringExtra("profilelink");
         gender = intent.getStringExtra("gender");
-
-
-        if(api.equals("0")) {
-            linearLayout.removeView(tvGender);
-            linearLayout.removeView(tvDOB);
-            linearLayout.removeView(tvLink);
-
-
-        }
-
 
         if(picURL.equals("No Picture found")) {
 
@@ -88,8 +72,21 @@ public class ProfileActivity extends AppCompatActivity {
         tvEmail.setText(email);
         tvGender.setText(gender);
         tvDOB.setText(userBirthday);
-        tvLink.setText(profileLink);
 
+        if (api.equals("0")) {
+
+            if (userBirthday == null || userBirthday.equals("") || userBirthday.equals(" ")) {
+
+                tvDOB.setText("05/23/2002");
+
+            }
+            if (gender == null || gender.equals("") || gender.equals(" ")) {
+
+                tvGender.setText("female");
+
+            }
+
+        }
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

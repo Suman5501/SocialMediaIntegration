@@ -95,37 +95,38 @@
                 android:drawableStart="@drawable/ic_baseline_cake_24"
                 android:drawablePadding="16dp"
                 android:ems="10"
-                android:hint="Date Of Birth"
-                android:inputType="date"
                 android:padding="16dp" />
 
             <TextView
-                android:id="@+id/link"
+                android:id="@+id/location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/round_border"
-                android:drawableStart="@drawable/ic_lock"
+                android:drawableStart="@drawable/ic_baseline_location_on_24"
                 android:drawablePadding="16dp"
                 android:ems="10"
-                android:hint="Profile Link"
+                android:hint="Date of birth"
+                android:text="Patna, Bihar"
                 android:padding="16dp" />
 
+
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/button_background_blue"
+                android:text="Logout"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView" />
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/btnLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:background="@drawable/button_background_blue"
-        android:text="Logout"
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
